@@ -1,5 +1,4 @@
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 public class FizzBuzzTest {
@@ -48,7 +47,6 @@ public class FizzBuzzTest {
     }
 
     // 3. start < end, start and end are negative
-   // @Ignore
     @Test
     public void testStartLessThanEnd_StartAndEndAreNegativeHappyPath() {
         ///arrange
