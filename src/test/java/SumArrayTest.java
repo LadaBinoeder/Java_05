@@ -36,7 +36,7 @@ public class SumArrayTest {
         int expectedResult = 0;
 
         // act
-        int actualResult = 0;
+        int actualResult = new SumArray().sumArray(array);
 
         // assert
         Assert.assertEquals(actualResult, expectedResult);
