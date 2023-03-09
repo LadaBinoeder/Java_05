@@ -53,4 +53,154 @@ public class CreateArrayTest {
         // assert
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testCreateDoubleArray_PositiveNumbers_HappyPath() {
+        // arrange
+        double a = 10.33;
+        double b = 20.23;
+        double c = 22.00;
+        double d = 2.78;
+        double e = 12.0877;
+        double[] expectedResult = {10.33, 20.23, 22.00, 2.78, 12.0877};
+
+        // act
+        double[] actualResult = new CreateArray().createDoubleArray(a, b, c, d, e);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateDoubleArray_NegativeNumbers_HappyPath() {
+        // arrange
+        double a = -10.33;
+        double b = -20.23;
+        double c = -22.00;
+        double d = -2.78;
+        double e = -12.0877;
+        double[] expectedResult = {-10.33, -20.23, -22.00, -2.78, -12.0877};
+
+        // act
+        double[] actualResult = new CreateArray().createDoubleArray(a, b, c, d, e);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateDoubleArray_Zeros_HappyPath() {
+        // arrange
+        double a = 0;
+        double b = 0;
+        double c = 0;
+        double d = 0;
+        double e = 0;
+        double[] expectedResult = {0.0, 0.0, 0.0, 0.0, 0.0};
+
+        // act
+        double[] actualResult = new CreateArray().createDoubleArray(a, b, c, d, e);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateStringArray_HappyPath() {
+        // arrange
+       String a = "Hund";
+       String b = "Katze";
+       String c = "Pferd";
+       String d = "Ziege";
+       String e = "Affe";
+       String[] expectedResult = {"Hund", "Katze", "Pferd", "Ziege", "Affe"};
+
+        // act
+        String[] actualResult = new CreateArray().createStringArray(a, b, c, d, e);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateStringArray_EmptyStrings_HappyPath() {
+        // arrange
+        String a = "";
+        String b = "";
+        String c = "";
+        String d = "";
+        String e = "";
+        String[] expectedResult = {"", "", "", "", ""};
+
+        // act
+        String[] actualResult = new CreateArray().createStringArray(a, b, c, d, e);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateArrayFromText_HappyPath() {
+        // arrange
+        String a = "Ich liebe Java";
+        String[] expectedResult = {"Ich", "liebe", "Java"};
+
+        // act
+        String[] actualResult = new CreateArray().createArrayFromText(a);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateArrayFromText_RegexFirst_HappyPath() {
+        // arrange
+        String a = " Ich liebe Java";
+        String[] expectedResult = {"", "Ich", "liebe", "Java"};
+
+        // act
+        String[] actualResult = new CreateArray().createArrayFromText(a);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateArrayFromText_RegexLast_HappyPath() {
+        // arrange
+        String a = "Ich liebe Java ";
+        String[] expectedResult = {"Ich", "liebe", "Java"};
+
+        // act
+        String[] actualResult = new CreateArray().createArrayFromText(a);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateArrayFromText_EmptyString_Negative() {
+        // arrange
+        String a = "";
+        String[] expectedResult = {""};
+
+        // act
+        String[] actualResult = new CreateArray().createArrayFromText(a);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateArrayFromText_OnlyRegex_Negative() {
+        // arrange
+        String a = " ";
+        String[] expectedResult = {};
+
+        // act
+        String[] actualResult = new CreateArray().createArrayFromText(a);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
