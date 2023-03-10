@@ -80,4 +80,56 @@ public class OddEvenValuesInArrayTest {
         // assert
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testCountOddEvenValuesInArray_OddAndEvenNumber_HappyPath() {
+        // arrange
+        int[] array = {2, 4, 6, 7, 8, 3, 7, 4, 2, 8};
+        int[] expectedResult = {7, 3};
+
+        // act
+        int[] actualResult = new OddEvenValuesInArray().countOddEvenValuesInArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCountOddEvenValuesInArray_OnlyOddNumbers_HappyPath() {
+        // arrange
+        int[] array = {2, 4, 6, 8, 8, 70, 76, 4, 2, 8};
+        int[] expectedResult = {10, 0};
+
+        // act
+        int[] actualResult = new OddEvenValuesInArray().countOddEvenValuesInArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCountOddEvenValuesInArray_OnlyEvenNumbers_HappyPath() {
+        // arrange
+        int[] array = {21, 43, 65, 87, 89, 7, 7, 45, 27, 89};
+        int[] expectedResult = {0, 10};
+
+        // act
+        int[] actualResult = new OddEvenValuesInArray().countOddEvenValuesInArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCountOddEvenValuesInArray_EmptyArray_HappyPath() {
+        // arrange
+        int[] array = {};
+        int[] expectedResult = {0, 0};
+
+        // act
+        int[] actualResult = new OddEvenValuesInArray().countOddEvenValuesInArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
