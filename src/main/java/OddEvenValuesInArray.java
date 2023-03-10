@@ -6,8 +6,8 @@ public class OddEvenValuesInArray {
 
     public int countEvenValuesInArray(int[] array) {
         int count = 0;
-        for(int i = 0; i < array.length; i++) {
-            if(array[i] % 2 == 0) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
                 count++;
             }
         }
@@ -20,8 +20,8 @@ public class OddEvenValuesInArray {
 
     public int countOddValuesInArray(int[] array) {
         int count = 0;
-        for(int i = 0; i < array.length; i++) {
-            if(array[i] % 2 != 0) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 != 0) {
                 count++;
             }
         }
@@ -38,8 +38,8 @@ public class OddEvenValuesInArray {
         int countOdd = 0;
         int countEven = 0;
 
-        for(int i = 0; i < array.length; i++) {
-            if(array[i] % 2 == 0) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
                 countEven++;
             } else {
                 countOdd++;
@@ -49,4 +49,35 @@ public class OddEvenValuesInArray {
         return resultArray;
 
     }
+
+    /* 3. В классе OddEvenElementsInArray написать метод createOddEvenArray(),
+     * который принимает массив целых случайных чисел, и возвращает двумерный
+     * массив (массив четных и массив нечетных чисел)
+     */
+
+//    public int[][] createOddEvenArray(int[] array) {
+//        int countOdd = 0;
+//        int countEven = 0;
+//
+//        for (int i = 0; i < array.length; i++) {
+//            if (array[i] % 2 == 0) {
+//                countEven++;
+//            } else {
+//                countOdd++;
+//            }
+//        }
+//
+//        int[][] resultArray = new int[countEven][countOdd];
+//        for (int i = 0; i < resultArray.length; i++) {
+//            for (int j = 0; j < resultArray[i].length; j++) {
+//                if (array[i] % 2 == 0) {
+//                    resultArray[0][i] = array[i];
+//                } else {
+//                    resultArray[1][j] = array[i];
+//                }
+//            }
+//        }
+//        return resultArray;
+//    }
 }
+

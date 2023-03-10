@@ -218,4 +218,97 @@ public class ManipulationsWithArraysTest {
         // assert
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testGetTheGreaterHalf_EvenNumberOfElements_LeftPartGreater_HappyPath() {
+        // arrange
+        int[] array = {20, 100, 3, 6, 2, 1, 1, 2, 1, 1};
+        int[] expectedResult = {20, 100, 3, 6, 2};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().getTheGreaterHalf(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testGetTheGreaterHalf_EvenNumberOfElements_RightPartGreater_HappyPath() {
+        // arrange
+        int[] array = {20, 100, 3, 6, 2, 100, 100, 200, 100, 100};
+        int[] expectedResult = {100, 100, 200, 100, 100};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().getTheGreaterHalf(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testGetTheGreaterHalf_EvenNumberOfElements_RightAndLeftPartEqual_HappyPath() {
+        // arrange
+        int[] array = {99, 101, 199, 102, 99, 100, 100, 200, 100, 100};
+        int[] expectedResult = {99, 101, 199, 102, 99};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().getTheGreaterHalf(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testGetTheGreaterHalf_OddNumberOfElements_LeftPartGreater_HappyPath() {
+        // arrange
+        int[] array = {20, 100, 3, 6, 10, 2, 1, 1, 2, 1, 1};
+        int[] expectedResult = {20, 100, 3, 6, 10, 2};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().getTheGreaterHalf(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testGetTheGreaterHalf_OddNumberOfElements_RightPartGreater_HappyPath() {
+        // arrange
+        int[] array = {20, 100, 3, 6, 2, 100, 100, 200, 100, 100, 888};
+        int[] expectedResult = {100, 200, 100, 100, 888};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().getTheGreaterHalf(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testGetTheGreaterHalf_OddNumberOfElements_RightAndLeftPartEqual_HappyPath() {
+        // arrange
+        int[] array = {99, 101, 199, 102, 99, 100, 100, 200, 100, 100, 0};
+        int[] expectedResult = {99, 101, 199, 102, 99, 100};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().getTheGreaterHalf(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testGetTheGreaterHalf_EmptyArray_HappyPath() {
+        // arrange
+        int[] array = {};
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().getTheGreaterHalf(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+
 }
