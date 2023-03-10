@@ -148,4 +148,74 @@ public class ManipulationsWithArraysTest {
         // assert
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testAreValuesGreaterThanNumber_ValuesGreater_HappyPath() {
+        // arrange
+        int[] array = {10, 20, 30, 40, 50, 66, 77};
+        int number = 2;
+        boolean expectedResult = true;
+
+        // act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testAreValuesGreaterThanNumber_ValuesSmaller_HappyPath() {
+        // arrange
+        int[] array = {1, 1, 0, -1, -2, 1, -22};
+        int number = 2;
+        boolean expectedResult = false;
+
+        // act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testAreValuesGreaterThanNumber_OneValueSmaller_HappyPath() {
+        // arrange
+        int[] array = {10, 10, 50, -1, 25, 19, 22};
+        int number = 2;
+        boolean expectedResult = false;
+
+        // act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testAreValuesGreaterThanNumber_ValuesEqualNumber_HappyPath() {
+        // arrange
+        int[] array = {2, 2, 2, 2, 2};
+        int number = 2;
+        boolean expectedResult = false;
+
+        // act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testAreValuesGreaterThanNumber_EmptyArray_Negative() {
+        // arrange
+        int[] array = {};
+        int number = 2;
+        boolean expectedResult = false;
+
+        // act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
