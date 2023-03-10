@@ -78,4 +78,34 @@ public class CreateArray {
         return array;
 
     }
+
+    /* 1. написать метод getPhoneNumberAndCountry(), который принимает массив
+     * из 11 целых положительных чисел от 0 до 9, и возвращает массив, который
+     * содержит номер телефона, состоящий из этих чисел, и название страны,
+     * которой номер принадлежит.
+     */
+
+    public String[] getPhoneNumberAndCountry(int[] phoneNumber) {
+        if (phoneNumber.length == 11) {
+            String[] resultArray = new String[2];
+            resultArray[0] = Integer.toString(phoneNumber[0]);
+            for (int i = 1; i < phoneNumber.length; i++) {
+                resultArray[0] += Integer.toString(phoneNumber[i]);
+            }
+            if (phoneNumber[0] == 1 && phoneNumber[1] == 8 && phoneNumber[2] == 0
+                    && phoneNumber[3] == 0) {
+                resultArray[1] = "USA";
+            } else if (phoneNumber[0] == 4 && phoneNumber[1] == 9) {
+                resultArray[1] = "Deutschland";
+            } else {
+                resultArray[1] = "Unbekanntes Land";
+            }
+
+            return resultArray;
+        }
+        String[] resultArray = {"Das ist keine Telefonnummer. Bitte geben Sie "
+                + "eine Telefonnummer bestehend aus 11 Ziffern ein"};
+        return resultArray;
+
+    }
 }

@@ -294,4 +294,71 @@ public class CreateArrayTest {
         // assert
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testGetPhoneNumberAndCountry_USAPhoneNumber_HappyPath() {
+        // arrange
+        int[] number = {1, 8, 0, 0, 1, 2, 3, 4, 5, 6, 7};
+        String[] expectedResult = {"18001234567", "USA"};
+
+        // act
+        String[] actualResult = new CreateArray().getPhoneNumberAndCountry(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testGetPhoneNumberAndCountry_GermanyPhoneNumber_HappyPath() {
+        // arrange
+        int[] number = {4, 9, 1, 7, 4, 2, 3, 4, 5, 6, 7};
+        String[] expectedResult = {"49174234567", "Deutschland"};
+
+        // act
+        String[] actualResult = new CreateArray().getPhoneNumberAndCountry(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testGetPhoneNumberAndCountry_UnknownCountryPhoneNumber_HappyPath() {
+        // arrange
+        int[] number = {4, 0, 1, 7, 4, 2, 3, 4, 5, 6, 7};
+        String[] expectedResult = {"40174234567", "Unbekanntes Land"};
+
+        // act
+        String[] actualResult = new CreateArray().getPhoneNumberAndCountry(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testGetPhoneNumberAndCountry_NotAPhoneNumber_HappyPath() {
+        // arrange
+        int[] number = {4, 0, 8, 5, 1, 7, 4, 2, 3, 4, 5, 6, 7};
+        String[] expectedResult = {"Das ist keine Telefonnummer. Bitte geben Sie "
+                + "eine Telefonnummer bestehend aus 11 Ziffern ein"};
+
+        // act
+        String[] actualResult = new CreateArray().getPhoneNumberAndCountry(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testGetPhoneNumberAndCountry_EmptyArray_HappyPath() {
+        // arrange
+        int[] number = {};
+        String[] expectedResult = {"Das ist keine Telefonnummer. Bitte geben Sie "
+                + "eine Telefonnummer bestehend aus 11 Ziffern ein"};
+
+        // act
+        String[] actualResult = new CreateArray().getPhoneNumberAndCountry(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
