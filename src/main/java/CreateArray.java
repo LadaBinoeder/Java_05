@@ -53,10 +53,29 @@ public class CreateArray {
     public int[] createIntArrayFromText(String number) {
         String[] str = number.split(" ");
         int[] array = new int[str.length];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Double.parseDouble(str[i]));
+        }
+        return array;
+
+    }
+
+    /* 5. Написать метод multiplesOf(), который принимает на вход целое
+     * положительное число number в пределах от 1 включительно до 10 включительно,
+     * и возвращает таблицу умножения на это число в виде массива
+     */
+
+    public int[] multiplesOf(int number) {
+        if (number > 0 && number < 11) {
+            int[] array = new int[11];
             for (int i = 0; i < array.length; i++) {
-                array[i] = (int) (Double.parseDouble(str[i]));
+                array[i] = number * i;
             }
             return array;
+
+        }
+        int[] array = new int[0];
+        return array;
 
     }
 }

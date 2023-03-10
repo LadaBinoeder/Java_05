@@ -255,4 +255,43 @@ public class CreateArrayTest {
 //        // assert
 //        Assert.assertEquals(actualResult, expectedResult);
 //    }
+
+    @Test
+    public void testMultiplesOf_NumberValid_HappyPath() {
+        // arrange
+        int number = 2;
+        int[] expectedResult = {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+
+        // act
+        int[] actualResult = new CreateArray().multiplesOf(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testMultiplesOf_NumberLessThanOne_Negative() {
+        // arrange
+        int number = 0;
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new CreateArray().multiplesOf(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testMultiplesOf_NumberMoreThan10_Negative() {
+        // arrange
+        int number = 11;
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new CreateArray().multiplesOf(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
