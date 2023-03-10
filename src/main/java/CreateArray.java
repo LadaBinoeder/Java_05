@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class CreateArray {
 
     /* 1. Написать метод createIntArray(), который принимает на вход 5 целых
@@ -5,8 +7,8 @@ public class CreateArray {
      */
     public int[] createIntArray(int a, int b, int c, int d, int e) {
 
-       int[] array = new int[]{a, b, c, d, e};
-       return array;
+        int[] array = new int[]{a, b, c, d, e};
+        return array;
 
     }
 
@@ -40,6 +42,21 @@ public class CreateArray {
 
         String[] array = a.split(" ");
         return array;
+
+    }
+
+    /* 1. В классе CreateArray написать метод createIntArrayFromText(), который
+     * принимает на вход строку чисел (н-р, “3 4 1 8 10 12.3”) и возвращает
+     *  массив типа int[] из этих чисел. (можно использовать split() или
+     * toCharArray())
+     */
+    public int[] createIntArrayFromText(String number) {
+        String[] str = number.split(" ");
+        int[] array = new int[str.length];
+            for (int i = 0; i < array.length; i++) {
+                array[i] = (int) (Double.parseDouble(str[i]));
+            }
+            return array;
 
     }
 }

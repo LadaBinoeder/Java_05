@@ -203,4 +203,56 @@ public class CreateArrayTest {
         // assert
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testCreateIntArrayFromText_OnlyIntInString_HappyPath() {
+        // arrange
+        String number = "3 1 4 6 8 2 7";
+        int[] expectedResult = {3, 1, 4, 6, 8, 2, 7};
+
+        // act
+        int[] actualResult = new CreateArray().createIntArrayFromText(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateIntArrayFromText_IntAndDoubleInString_HappyPath() {
+        // arrange
+        String number = "3 1.2 4 6 8.32 2 7";
+        int[] expectedResult = {3, 1, 4, 6, 8, 2, 7};
+
+        // act
+        int[] actualResult = new CreateArray().createIntArrayFromText(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+//    @Test
+//    public void testCreateIntArrayFromText_NotNumbersInString_Negative() {
+//        // arrange
+//        String number = "katze hund kuh";
+//        int[] expectedResult = {};
+//
+//        // act
+//        int[] actualResult = new CreateArray().createIntArrayFromText(number);
+//
+//        // assert
+//        Assert.assertEquals(actualResult, expectedResult);
+//    }
+//
+//    @Test
+//    public void testCreateIntArrayFromText_EmptyString_HappyPath() {
+//        // arrange
+//        String number = "";
+//        int[] expectedResult = {};
+//
+//        // act
+//        int[] actualResult = new CreateArray().createIntArrayFromText(number);
+//
+//        // assert
+//        Assert.assertEquals(actualResult, expectedResult);
+//    }
 }
