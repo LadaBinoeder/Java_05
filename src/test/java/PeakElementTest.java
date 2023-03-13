@@ -46,7 +46,46 @@ public class PeakElementTest {
     public void testPeakElement_EmptyArray_Negative() {
         // arrange
         int[] arr = {};
-        int[] expectedResult = {-1};
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new PeakElement().peakElement(arr);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testPeakElement_ArrayLengthTwo_HappyPath() {
+        // arrange
+        int[] arr = {1, 2};
+        int[] expectedResult = {2};
+
+        // act
+        int[] actualResult = new PeakElement().peakElement(arr);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testPeakElement_ArrayLengthOne_Negative() {
+        // arrange
+        int[] arr = {22};
+        int[] expectedResult = {22};
+
+        // act
+        int[] actualResult = new PeakElement().peakElement(arr);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testPeakElement_NullArray_Negative() {
+        // arrange
+        int[] arr = null;
+        int[] expectedResult = {};
 
         // act
         int[] actualResult = new PeakElement().peakElement(arr);

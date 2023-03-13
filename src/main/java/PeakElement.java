@@ -1,3 +1,5 @@
+import project_utils.Utils;
+
 public class PeakElement {
 
     /* 10. Написать алгоритм PeakElement,  который принимает на вход массив
@@ -7,7 +9,10 @@ public class PeakElement {
 
     public int[] peakElement(int[] arr) {
 
-        if(arr.length > 0) {
+        if(arr.length == 1) {
+            return arr;
+
+        } else if(Utils.checkNullArrayInt(arr) && arr.length > 1) {
             // вычисляем длину массива
             int length = 0;
             if (arr[0] > arr[1]) {
@@ -24,8 +29,9 @@ public class PeakElement {
             int[] arrayResult = new int[length];
 
             // заполняем массив
-            int count = 0;
             // выясняем, является ли первый элемент массива пиковым
+            int count = 0;
+
             if (arr[0] > arr[1]) {
                 arrayResult[count] = arr[0];
                 count++;
@@ -37,7 +43,7 @@ public class PeakElement {
                     count++;
                 }
             }
-            // выясняем, является ли первый элемент массива пиковым
+            // выясняем, является ли последний элемент массива пиковым
             if (arr[arr.length - 1] > arr[arr.length - 2]) {
                 arrayResult[count] = arr[arr.length - 1];
             }
@@ -45,8 +51,7 @@ public class PeakElement {
 
         }
 
-        int[] arrayResult = {-1};
-        return arrayResult;
+        return new int[0];
 
     }
 }
