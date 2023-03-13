@@ -72,4 +72,18 @@ public class KthLargestTest {
         // assert
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testKthLargest_NullArray_Negative() {
+        // arrange
+        int[] arr = null;
+        int k = 9;
+        int expectedResult = -1;
+
+        // act
+        int actualResult = new KthLargest().kthLargest(arr, k);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
