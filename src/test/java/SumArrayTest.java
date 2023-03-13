@@ -28,9 +28,9 @@ public class SumArrayTest {
         // assert
         Assert.assertEquals(actualResult, expectedResult);
     }
-        //ДОБАВИТЬ ТЕСТ ПРИ ПУСТОМ МАССИВЕ!!!!!!!!!!!!
+
     @Test
-    public void testSumArray_EmptyArray_Negative() {
+    public void testSumArray_EmptyArray_HappyPath() {
         // arrange
         int[] array = {};
         int expectedResult = 0;
@@ -41,5 +41,18 @@ public class SumArrayTest {
         // assert
         Assert.assertEquals(actualResult, expectedResult);
         }
+
+    @Test
+    public void testSumArray_NullArray_Negative() {
+        // arrange
+        int[] array = null;
+        int expectedResult = 0;
+
+        // act
+        int actualResult = new SumArray().sumArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
     }
+}
 
