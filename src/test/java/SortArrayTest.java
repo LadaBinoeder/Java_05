@@ -31,9 +31,35 @@ public class SortArrayTest {
     }
 
     @Test
-    public void testSortArray_EmptyArray_HappyPath() {
+    public void testSortArray_ArrayLengthOne_HappyPath() {
+        // arrange
+        int[] arr = {5};
+        int[] expectedResult = {5};
+
+        // act
+        int[] actualResult = new SortArray().sortArray(arr);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testSortArray_EmptyArray_Negative() {
         // arrange
         int[] arr = {};
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new SortArray().sortArray(arr);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testSortArray_NullArray_Negative() {
+        // arrange
+        int[] arr = null;
         int[] expectedResult = {};
 
         // act

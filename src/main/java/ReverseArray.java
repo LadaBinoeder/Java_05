@@ -6,7 +6,7 @@ public class ReverseArray {
      */
 
     public int[] reverseArray(int[] arr) {
-        if(Utils.checkNullArrayInt(arr) && Utils.checkEmptyArrayInt(arr )) {
+        if(Utils.checkNullArrayInt(arr) && Utils.checkEmptyArrayInt(arr)) {
             int[] arrReverse = new int[arr.length];
             int j = arr.length - 1;
             for (int i = 0; i < arr.length; i++) {
