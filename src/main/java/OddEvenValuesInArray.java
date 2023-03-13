@@ -27,12 +27,17 @@ public class OddEvenValuesInArray {
 
     public int countOddValuesInArray(int[] array) {
         int count = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 != 0) {
-                count++;
+        if(Utils.checkNullArrayInt(array) && Utils.checkEmptyArrayInt(array)) {
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] % 2 != 0) {
+                    count++;
+                }
             }
+            return count;
+
         }
-        return count;
+        return -1;
+
     }
 
     /* 2. В классе OddEvenElementsInArray написать метод

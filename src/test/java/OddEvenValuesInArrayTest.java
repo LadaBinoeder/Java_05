@@ -108,10 +108,49 @@ public class OddEvenValuesInArrayTest {
     }
 
     @Test
-    public void testCountOddValuesInArray_EmptyArray_HappyPath() {
+    public void testCountOddValuesInArray_Zeros_HappyPath() {
+        // arrange
+        int[] array = {0, 1};
+        int expectedResult = 1;
+
+        // act
+        int actualResult = new OddEvenValuesInArray().countOddValuesInArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCountOddValuesInArray_MinAndMaxValues_HappyPath() {
+        // arrange
+        int[] array = {Integer.MIN_VALUE, Integer.MAX_VALUE};
+        int expectedResult = 1;
+
+        // act
+        int actualResult = new OddEvenValuesInArray().countOddValuesInArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCountOddValuesInArray_EmptyArray_Negative() {
         // arrange
         int[] array = {};
-        int expectedResult = 0;
+        int expectedResult = -1;
+
+        // act
+        int actualResult = new OddEvenValuesInArray().countOddValuesInArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCountOddValuesInArray_NullArray_Negative() {
+        // arrange
+        int[] array = null;
+        int expectedResult = -1;
 
         // act
         int actualResult = new OddEvenValuesInArray().countOddValuesInArray(array);
