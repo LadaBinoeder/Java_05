@@ -1,3 +1,5 @@
+import project_utils.Utils;
+
 import java.util.Arrays;
 
 public class ManipulationsWithArrays {
@@ -8,11 +10,15 @@ public class ManipulationsWithArrays {
      */
 
     public int[] multipleArrayByNumber(int[] array, int number) {
-        for (int i = 0; i < array.length; i++) {
-            array[i] = array[i] * number;
-        }
+       if(Utils.checkNullArrayInt(array) && Utils.checkEmptyArrayInt(array)) {
+           for (int i = 0; i < array.length; i++) {
+               array[i] = array[i] * number;
+           }
 
-        return array;
+           return array;
+       }
+
+       return new int[0];
     }
 
     /* 6. Написать метод toDoubleArray(), который принимает на вход массив целых
@@ -20,11 +26,15 @@ public class ManipulationsWithArrays {
      */
 
     public double[] toDoubleArray(int[] array) {
-        double[] resultArray = new double[array.length];
-        for (int i = 0; i < array.length; i++) {
-            resultArray[i] = array[i];
-        }
-        return resultArray;
+       if(Utils.checkNullArrayInt(array) && Utils.checkEmptyArrayInt(array)) {
+           double[] resultArray = new double[array.length];
+           for (int i = 0; i < array.length; i++) {
+               resultArray[i] = array[i];
+           }
+           return resultArray;
+
+       }
+           return new double[0];
 
     }
 
@@ -33,11 +43,15 @@ public class ManipulationsWithArrays {
      */
 
     public int[] toIntArray(double[] array) {
-        int[] resultArray = new int[array.length];
-        for (int i = 0; i < array.length; i++) {
-            resultArray[i] = (int) (array[i]);
+        if(Utils.checkNullArrayDouble(array) && Utils.checkEmptyArrayDouble(array)) {
+            int[] resultArray = new int[array.length];
+            for (int i = 0; i < array.length; i++) {
+                resultArray[i] = (int) (array[i]);
+            }
+            return resultArray;
+
         }
-        return resultArray;
+        return new int[0];
 
     }
 
@@ -47,11 +61,15 @@ public class ManipulationsWithArrays {
      */
 
     public String[] toStringArray(int[] array) {
-        String[] resultArray = new String[array.length];
-        for (int i = 0; i < array.length; i++) {
-            resultArray[i] = array[i] + "";
+        if(Utils.checkNullArrayInt(array) && Utils.checkEmptyArrayInt(array)) {
+            String[] resultArray = new String[array.length];
+            for (int i = 0; i < array.length; i++) {
+                resultArray[i] = array[i] + "";
+            }
+            return resultArray;
+
         }
-        return resultArray;
+        return new String[0];
 
     }
 
@@ -61,11 +79,15 @@ public class ManipulationsWithArrays {
      */
 
     public String[] toStringArray(double[] array) {
-        String[] resultArray = new String[array.length];
-        for (int i = 0; i < array.length; i++) {
-            resultArray[i] = array[i] + "";
+        if(Utils.checkNullArrayDouble(array) && Utils.checkEmptyArrayDouble(array)) {
+            String[] resultArray = new String[array.length];
+            for (int i = 0; i < array.length; i++) {
+                resultArray[i] = array[i] + "";
+            }
+            return resultArray;
+
         }
-        return resultArray;
+        return new String[0];
 
     }
 
@@ -76,7 +98,7 @@ public class ManipulationsWithArrays {
 
     public boolean areValuesGreaterThanNumber(int[] array, int number) {
         int count = 0;
-        if (array.length != 0) {
+        if(Utils.checkNullArrayInt(array) && Utils.checkEmptyArrayInt(array)) {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] <= number) {
                     count++;

@@ -1,3 +1,5 @@
+import project_utils.Utils;
+
 public class OddEvenValuesInArray {
 
     /* 10. Написать метод countEvenValuesInArray(), который принимает на вход
@@ -6,12 +8,17 @@ public class OddEvenValuesInArray {
 
     public int countEvenValuesInArray(int[] array) {
         int count = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                count++;
+        if(Utils.checkNullArrayInt(array) && Utils.checkEmptyArrayInt(array)) {
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] % 2 == 0) {
+                    count++;
+                }
             }
+            return count;
+
         }
-        return count;
+        return -1;
+
     }
 
     /* 11. Написать метод countOddValuesInArray(), который принимает на вход

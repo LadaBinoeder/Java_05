@@ -32,7 +32,7 @@ public class ManipulationsWithArraysTest {
     }
 
     @Test
-    public void testMultipleArrayByNumber_EmptyArray_HappyPath() {
+    public void testMultipleArrayByNumber_EmptyArray_Negative() {
         // arrange
         int[] array = {};
         int number = 3;
@@ -46,7 +46,21 @@ public class ManipulationsWithArraysTest {
     }
 
     @Test
-    public void testToDoubleArray_HappyPath() {
+    public void testMultipleArrayByNumber_NullArray_Negative() {
+        // arrange
+        int[] array = null;
+        int number = 3;
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().multipleArrayByNumber(array, number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToDoubleArray_PositiveNumbers_HappyPath() {
         // arrange
         int[] array = {1, 2, 3, 4, 5};
         double[] expectedResult = {1.0, 2.0, 3.0, 4.0, 5.0};
@@ -59,7 +73,46 @@ public class ManipulationsWithArraysTest {
     }
 
     @Test
-    public void testToDoubleArray_EmptyArray_HappyPath() {
+    public void testToDoubleArray_NegativeNumbers_HappyPath() {
+        // arrange
+        int[] array = {-1, -2, -3, -4, -5};
+        double[] expectedResult = {-1.0, -2.0, -3.0, -4.0, -5.0};
+
+        // act
+        double[] actualResult = new ManipulationsWithArrays().toDoubleArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToDoubleArray_Zeros_HappyPath() {
+        // arrange
+        int[] array = {0, 0};
+        double[] expectedResult = {0.0, 0.0};
+
+        // act
+        double[] actualResult = new ManipulationsWithArrays().toDoubleArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToDoubleArray_MinAndMaxValues_HappyPath() {
+        // arrange
+        int[] array = {Integer.MAX_VALUE, Integer.MIN_VALUE};
+        double[] expectedResult = {2147483647.0, -2147483648.0};
+
+        // act
+        double[] actualResult = new ManipulationsWithArrays().toDoubleArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToDoubleArray_EmptyArray_Negative() {
         // arrange
         int[] array = {};
         double[] expectedResult = {};
@@ -72,7 +125,20 @@ public class ManipulationsWithArraysTest {
     }
 
     @Test
-    public void testToIntArray_HappyPath() {
+    public void testToDoubleArray_NullArray_Negative() {
+        // arrange
+        int[] array = null;
+        double[] expectedResult = {};
+
+        // act
+        double[] actualResult = new ManipulationsWithArrays().toDoubleArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToIntArray_PositiveNumbers_HappyPath() {
         // arrange
         double[] array = {1.0, 2.0, 3.0, 4.0, 5.0};
         int[] expectedResult = {1, 2, 3, 4, 5};
@@ -85,7 +151,46 @@ public class ManipulationsWithArraysTest {
     }
 
     @Test
-    public void testToIntArray_EmptyArray_HappyPath() {
+    public void testToIntArray_NegativeNumbers_HappyPath() {
+        // arrange
+        double[] array = {-1.0, -2.0, -3.0, -4.0, -5.0};
+        int[] expectedResult = {-1, -2, -3, -4, -5};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().toIntArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToIntArray_Zeros_HappyPath() {
+        // arrange
+        double[] array = {0.0, 0.0};
+        int[] expectedResult = {0, 0};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().toIntArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToIntArray_MinAndMaxValues_HappyPath() {
+        // arrange
+        double[] array = {Double.MIN_VALUE, Double.MAX_VALUE, -Double.MAX_VALUE};
+        int[] expectedResult = {0, Integer.MAX_VALUE, Integer.MIN_VALUE};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().toIntArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToIntArray_EmptyArray_Negative() {
         // arrange
         double[] array = {};
         int[] expectedResult = {};
@@ -98,7 +203,20 @@ public class ManipulationsWithArraysTest {
     }
 
     @Test
-    public void testToStringArray_Int_HappyPath() {
+    public void testToIntArray_NullArray_Negative() {
+        // arrange
+        double[] array = null;
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().toIntArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToStringArray_Int_PositiveNumbers_HappyPath() {
         // arrange
         int[] array = {1, 2, 3, 4, 5};
         String[] expectedResult = {"1", "2", "3", "4", "5"};
@@ -111,7 +229,33 @@ public class ManipulationsWithArraysTest {
     }
 
     @Test
-    public void testToStringArray_Int_EmptyArray_HappyPath() {
+    public void testToStringArray_Int_NegativeNumbers_HappyPath() {
+        // arrange
+        int[] array = {-11, -222, -3, 4, 5};
+        String[] expectedResult = {"-11", "-222", "-3", "4", "5"};
+
+        // act
+        String[] actualResult = new ManipulationsWithArrays().toStringArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToStringArray_Int_Zeros_HappyPath() {
+        // arrange
+        int[] array = {0, 0};
+        String[] expectedResult = {"0", "0"};
+
+        // act
+        String[] actualResult = new ManipulationsWithArrays().toStringArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToStringArray_Int_EmptyArray_Negative() {
         // arrange
         int[] array = {};
         String[] expectedResult = {};
@@ -124,7 +268,20 @@ public class ManipulationsWithArraysTest {
     }
 
     @Test
-    public void testToStringArray_Double_HappyPath() {
+    public void testToStringArray_Int_NullArray_Negative() {
+        // arrange
+        int[] array = null;
+        String[] expectedResult = {};
+
+        // act
+        String[] actualResult = new ManipulationsWithArrays().toStringArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToStringArray_Double_PositiveNumbers_HappyPath() {
         // arrange
         double[] array = {1.1, 2.5, 3.7, 4.0, 5.5};
         String[] expectedResult = {"1.1", "2.5", "3.7", "4.0", "5.5"};
@@ -137,9 +294,48 @@ public class ManipulationsWithArraysTest {
     }
 
     @Test
-    public void testToStringArray_Double_EmptyArray_HappyPath() {
+    public void testToStringArray_Double_NegativeNumbers_HappyPath() {
+        // arrange
+        double[] array = {-1.1, -2.5, -3.7, -4.0, -5.5};
+        String[] expectedResult = {"-1.1", "-2.5", "-3.7", "-4.0", "-5.5"};
+
+        // act
+        String[] actualResult = new ManipulationsWithArrays().toStringArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToStringArray_Double_Zeros_HappyPath() {
+        // arrange
+        double[] array = {0.0, 0.0};
+        String[] expectedResult = {"0.0", "0.0"};
+
+        // act
+        String[] actualResult = new ManipulationsWithArrays().toStringArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToStringArray_Double_EmptyArray_Negative() {
         // arrange
         double[] array = {};
+        String[] expectedResult = {};
+
+        // act
+        String[] actualResult = new ManipulationsWithArrays().toStringArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testToStringArray_Double_NullArray_Negative() {
+        // arrange
+        double[] array = null;
         String[] expectedResult = {};
 
         // act
@@ -209,6 +405,20 @@ public class ManipulationsWithArraysTest {
     public void testAreValuesGreaterThanNumber_EmptyArray_Negative() {
         // arrange
         int[] array = {};
+        int number = 2;
+        boolean expectedResult = false;
+
+        // act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testAreValuesGreaterThanNumber_NullArray_Negative() {
+        // arrange
+        int[] array = null;
         int number = 2;
         boolean expectedResult = false;
 

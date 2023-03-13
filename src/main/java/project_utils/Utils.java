@@ -20,5 +20,23 @@ public class Utils {
 
     }
 
+    public static boolean checkEmptyArrayDouble(double[] array) {
+        if(array.length != 0) {
+            return true;
+
+        }
+        return false;
+
+    }
+
+    public static boolean checkNullArrayDouble(double[] array) {
+        if(array != null) {
+            return true;
+
+        }
+        return false;
+
+    }
+
 
 }
