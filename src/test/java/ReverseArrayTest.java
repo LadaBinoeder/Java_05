@@ -32,9 +32,37 @@ public class ReverseArrayTest {
     }
 
     @Test
-    public void testReverseArray_EmptyArray_HappyPath() {
+    public void testReverseArray_ArrayLengthIsOne_HappyPath() {
+        // arrange
+        int[] arr = {-2};
+        int[] expectedResult = {-2};
+
+        // act
+        int[] actualResult = new ReverseArray().reverseArray(arr);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+
+    }
+
+    @Test
+    public void testReverseArray_EmptyArray_Negative() {
         // arrange
         int[] arr = {};
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new ReverseArray().reverseArray(arr);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+
+    }
+
+    @Test
+    public void testReverseArray_NullArray_Negative() {
+        // arrange
+        int[] arr = null;
         int[] expectedResult = {};
 
         // act
