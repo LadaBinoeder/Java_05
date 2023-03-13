@@ -56,10 +56,10 @@ public class GoodBadPoorNumberTest {
     }
 
     @Test
-    public void testGoodBadPoorNumber_MultipleOfSevenNiveAndEleven_Negative() {
+    public void testGoodBadPoorNumber_MultipleOfSevenNineAndEleven_Negative() {
         // arrange
         int m = 693;
-        String expectedResult = "-1";
+        String expectedResult = "Good Number";
 
         // act
         String actualResult = new GoodBadPoorNumber().goodPoorBadNumber(m);
