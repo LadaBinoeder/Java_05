@@ -43,7 +43,20 @@ public class NegativeOnTheRightTest {
     }
 
     @Test
-    public void testNegativeOnTheRight_EmptyArray_HappyPath() {
+    public void testNegativeOnTheRight_ArrayLengthOne_HappyPath() {
+        // arrange
+        int[] arr = {-4};
+        int[] expectedResult = {-4};
+
+        // act
+        int[] actualResult = new NegativeOnTheRight().negativeOnTheRight(arr);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testNegativeOnTheRight_EmptyArray_Negative() {
         // arrange
         int[] arr = {};
         int[] expectedResult = {};
@@ -56,4 +69,16 @@ public class NegativeOnTheRightTest {
     }
 
 
+    @Test
+    public void testNegativeOnTheRight_NullArray_Negative() {
+        // arrange
+        int[] arr = null;
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new NegativeOnTheRight().negativeOnTheRight(arr);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
