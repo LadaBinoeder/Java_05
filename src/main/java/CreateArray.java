@@ -108,4 +108,52 @@ public class CreateArray {
         return resultArray;
 
     }
-}
+
+    /* 2. Написать метод createUniqueArray(), который принимает массив целых
+     * положительных чисел больше 0, и возвращает массив уникальных чисел.
+     */
+
+//    public int[] createUniqueArray(int[] array) {
+//        int lengthUnique = array.length;
+//        for (int i = 0; i < array.length; i++) {
+//            for (int j = i + 1; j < array.length; j++) {
+//                if (array[i] == array[j]) {
+//                    lengthUnique--;
+//                }
+//            }
+//        }
+//        System.out.println(lengthUnique);
+//    }
+
+//        int result = 0;
+//        int countUnique = 0;
+//        int count = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            countUnique++;
+//            for (int j = i + 1; j < array.length; j++) {
+//                if (array[j] == array[i]) {
+//                    count++;
+//                }
+//            }
+//        }
+//        return result = countUnique - count;
+
+//        temp = array[0];
+//        int index = 0;
+//        int[] uniqueArray = new int[length];
+//        for(int i = 0; i < uniqueArray.length; i++) {
+//            if(array[i] != temp) {
+//                uniqueArray[0] = array[i];
+//                index++;
+//            }
+//        }
+
+
+//        // test if all the elements are valid
+//        for(int i = 0; i < array.length; i++) {
+//            if(array[i] <= 0) {
+//                return [-1];
+//            }
+        }
+
+
