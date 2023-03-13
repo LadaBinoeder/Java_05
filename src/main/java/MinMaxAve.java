@@ -1,3 +1,5 @@
+import project_utils.Utils;
+
 public class MinMaxAve {
 
     /* 8. Написать алгоритм MinMaxAve, который принимает массив чисел int[]
@@ -7,24 +9,37 @@ public class MinMaxAve {
      */
 
     public int[] minMaxAve(int[] array, int a, int b) {
-        int max;
-        int min;
-        if(a < array.length && b < array.length && a >= 0 && b >= 0) {
-            if (array[a] >= array[b]) {
-                max = array[a];
-                min = array[b];
-            } else {
-                max = array[b];
-                min = array[a];
+        if(Utils.checkNullArrayInt(array) && Utils.checkEmptyArrayInt(array)
+                && (a < array.length && b < array.length && a >= 0 && b >= 0)) {
+            if(a > b) {
+                int temp;
+                temp = a;
+                a = b;
+                b = temp;
             }
-            int average = (array[a] + array[b]) / 2;
-            int[] resultArray = {min, max, average};
-            return resultArray;
+
+            int sum = 0;
+            int count = 0;
+            int max = array[a];
+            int min = array[a];
+
+            for(int i = a; i <= b; i++) {
+                count++;
+                sum += array[i];
+
+                if(array[i] < min) {
+                    min = array[i];
+                } else {
+                    max = array[i];
+                }
+            }
+
+            int average = Math.round(sum / count);
+            return new int[] {min, max, average};
 
         }
 
-        int[] resultArrayError = {-1};
-        return resultArrayError;
+        return new int[0];
 
     }
 }
