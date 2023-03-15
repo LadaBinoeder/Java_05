@@ -230,6 +230,32 @@ public class CreateArrayTest {
         Assert.assertEquals(actualResult, expectedResult);
     }
 
+    @Test
+    public void testCreateIntArrayFromText_EmptyString_Negative() {
+        // arrange
+        String number = "";
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new CreateArray().createIntArrayFromText(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateIntArrayFromText_NullString_Negative() {
+        // arrange
+        String number = null;
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new CreateArray().createIntArrayFromText(number);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
 //    @Test
 //    public void testCreateIntArrayFromText_NotNumbersInString_Negative() {
 //        // arrange

@@ -160,7 +160,7 @@ public class OddEvenValuesInArrayTest {
     }
 
     @Test
-    public void testCountOddEvenValuesInArray_OddAndEvenNumber_HappyPath() {
+    public void testCountOddEvenValuesInArray_OddAndEvenNumbers_HappyPath() {
         // arrange
         int[] array = {2, 4, 6, 7, 8, 3, 7, 4, 2, 8};
         int[] expectedResult = {7, 3};
@@ -199,10 +199,23 @@ public class OddEvenValuesInArrayTest {
     }
 
     @Test
-    public void testCountOddEvenValuesInArray_EmptyArray_HappyPath() {
+    public void testCountOddEvenValuesInArray_EmptyArray_Negative() {
         // arrange
         int[] array = {};
-        int[] expectedResult = {0, 0};
+        int[] expectedResult = {};
+
+        // act
+        int[] actualResult = new OddEvenValuesInArray().countOddEvenValuesInArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testgit_NullArray_Negative() {
+        // arrange
+        int[] array = null;
+        int[] expectedResult = {};
 
         // act
         int[] actualResult = new OddEvenValuesInArray().countOddEvenValuesInArray(array);

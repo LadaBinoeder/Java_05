@@ -49,7 +49,7 @@ public class OddEvenValuesInArray {
     public int[] countOddEvenValuesInArray(int[] array) {
         int countOdd = 0;
         int countEven = 0;
-
+        if (Utils.checkNullArrayInt(array) && Utils.checkEmptyArrayInt(array)) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
                 countEven++;
@@ -59,6 +59,9 @@ public class OddEvenValuesInArray {
         }
         int[] resultArray = new int[]{countEven, countOdd};
         return resultArray;
+
+    }
+        return new int[0];
 
     }
 

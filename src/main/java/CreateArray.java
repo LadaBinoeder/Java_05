@@ -1,3 +1,5 @@
+import project_utils.Utils;
+
 import java.util.Arrays;
 
 public class CreateArray {
@@ -51,12 +53,16 @@ public class CreateArray {
      * toCharArray())
      */
     public int[] createIntArrayFromText(String number) {
-        String[] str = number.split(" ");
-        int[] array = new int[str.length];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Double.parseDouble(str[i]));
+        if(number != null && number != "") {
+            String[] str = number.split(" ");
+            int[] array = new int[str.length];
+            for (int i = 0; i < array.length; i++) {
+                array[i] = (int) (Double.parseDouble(str[i]));
+            }
+            return array;
+
         }
-        return array;
+        return new int[0];
 
     }
 
