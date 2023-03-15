@@ -212,13 +212,91 @@ public class OddEvenValuesInArrayTest {
     }
 
     @Test
-    public void testgit_NullArray_Negative() {
+    public void testCountOddEvenValuesInArray_NullArray_Negative() {
         // arrange
         int[] array = null;
         int[] expectedResult = {};
 
         // act
         int[] actualResult = new OddEvenValuesInArray().countOddEvenValuesInArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateOddEvenArray_PositiveNumbers_HappyPath() {
+        // arrange
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8};
+        int[][] expectedResult = {{2, 4, 6, 8}, {1, 3, 5, 7}};
+
+        // act
+        int[][] actualResult = new OddEvenValuesInArray().createOddEvenArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateOddEvenArray_NegativeNumbers_HappyPath() {
+        // arrange
+        int[] array = {-1, -2, -3, -4, -5, -6, -7, 8};
+        int[][] expectedResult = {{-2, -4, -6, 8}, {-1, -3, -5, -7}};
+
+        // act
+        int[][] actualResult = new OddEvenValuesInArray().createOddEvenArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateOddEvenArray_Zeros_HappyPath() {
+        // arrange
+        int[] array = {0, 0, 0};
+        int[][] expectedResult = {{0, 0, 0}, {}};
+
+        // act
+        int[][] actualResult = new OddEvenValuesInArray().createOddEvenArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateOddEvenArray_OnlyOneElementInArray_HappyPath() {
+        // arrange
+        int[] array = {1};
+        int[][] expectedResult = {{}, {1}};
+
+        // act
+        int[][] actualResult = new OddEvenValuesInArray().createOddEvenArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateOddEvenArray_EmptyArray_Negative() {
+        // arrange
+        int[] array = {};
+        int[][] expectedResult = {};
+
+        // act
+        int[][] actualResult = new OddEvenValuesInArray().createOddEvenArray(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testCreateOddEvenArray_NullArray_Negative() {
+        // arrange
+        int[] array = null;
+        int[][] expectedResult = {};
+
+        // act
+        int[][] actualResult = new OddEvenValuesInArray().createOddEvenArray(array);
 
         // assert
         Assert.assertEquals(actualResult, expectedResult);
