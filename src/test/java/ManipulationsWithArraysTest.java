@@ -508,7 +508,20 @@ public class ManipulationsWithArraysTest {
     }
 
     @Test
-    public void testGetTheGreaterHalf_EmptyArray_HappyPath() {
+    public void testGetTheGreaterHalf_OddNumberOfElements_SmallArray_HappyPath() {
+        // arrange
+        int[] array = {0, 1, 2};
+        int[] expectedResult = {2};
+
+        // act
+        int[] actualResult = new ManipulationsWithArrays().getTheGreaterHalf(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testGetTheGreaterHalf_EmptyArray_Negative() {
         // arrange
         int[] array = {};
         int[] expectedResult = {};
@@ -520,5 +533,16 @@ public class ManipulationsWithArraysTest {
         Assert.assertEquals(actualResult, expectedResult);
     }
 
+    @Test
+    public void testGetTheGreaterHalf_NullArray_Negative() {
+        // arrange
+        int[] array = null;
+        int[] expectedResult = {};
 
+        // act
+        int[] actualResult = new ManipulationsWithArrays().getTheGreaterHalf(array);
+
+        // assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }

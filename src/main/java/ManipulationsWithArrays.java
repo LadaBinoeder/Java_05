@@ -119,61 +119,65 @@ public class ManipulationsWithArrays {
      */
 
     public int[] getTheGreaterHalf(int[] array) {
-        int[] leftArray;
-        int[] rightArray;
+        if(Utils.checkNullArrayInt(array) && Utils.checkEmptyArrayInt(array)) {
+            int[] leftArray;
+            int[] rightArray;
 
-        // count arrays' length
-        if (array.length % 2 == 0) {
-            leftArray = new int[array.length / 2];
-        } else {
-            leftArray = new int[(array.length + 1) / 2];
-        }
-
-        rightArray = new int[array.length - leftArray.length];
-
-        // fill the first array
-        if (array.length % 2 == 0) {
-            for (int i = 0; i < array.length / 2; i++) {
-                leftArray[i] = array[i];
+            // count arrays' length
+            if (array.length % 2 == 0) {
+                leftArray = new int[array.length / 2];
+            } else {
+                leftArray = new int[(array.length + 1) / 2];
             }
-        } else {
-            for (int i = 0; i < (array.length + 1) / 2; i++) {
-                leftArray[i] = array[i];
+
+            rightArray = new int[array.length - leftArray.length];
+
+            // fill the first array
+            if (array.length % 2 == 0) {
+                for (int i = 0; i < array.length / 2; i++) {
+                    leftArray[i] = array[i];
+                }
+            } else {
+                for (int i = 0; i < (array.length + 1) / 2; i++) {
+                    leftArray[i] = array[i];
+                }
+            }
+
+            // fill the second array
+            int index = 0;
+            if (array.length % 2 == 0) {
+                for (int i = array.length / 2; i < array.length; i++) {
+                    rightArray[index] = array[i];
+                    index++;
+                }
+            } else {
+                for (int i = (array.length / 2) + 1; i < array.length; i++) {
+                    rightArray[index] = array[i];
+                    index++;
+                }
+            }
+
+            // count the sum of arrays' elements
+            int count1 = 0;
+            int count2 = 0;
+            for (int i = 0; i < leftArray.length; i++) {
+                count1 += leftArray[i];
+            }
+
+            for (int i = 0; i < rightArray.length; i++) {
+                count2 += rightArray[i];
+            }
+
+            // compare the sum of elements
+            if (count1 >= count2) {
+                return leftArray;
+
+            } else {
+                return rightArray;
+
             }
         }
+        return new int[0];
 
-        // fill the second array
-        int index = 0;
-        if (array.length % 2 == 0) {
-            for (int i = array.length / 2; i < array.length; i++) {
-                rightArray[index] = array[i];
-                index++;
-            }
-        } else {
-            for (int i = (array.length / 2) + 1; i < array.length; i++) {
-                rightArray[index] = array[i];
-                index++;
-            }
-        }
-
-        // count the sum of arrays' elements
-        int count1 = 0;
-        int count2 = 0;
-        for (int i = 0; i < leftArray.length; i++) {
-            count1 += leftArray[i];
-        }
-
-        for (int i = 0; i < rightArray.length; i++) {
-            count2 += rightArray[i];
-        }
-
-        // compare the sum of elements
-        if (count1 >= count2) {
-            return leftArray;
-
-        } else {
-            return rightArray;
-
-        }
     }
 }
